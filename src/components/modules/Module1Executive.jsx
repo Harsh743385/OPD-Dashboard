@@ -2,7 +2,7 @@ import React from 'react';
 import { useDashboard } from '../../context/DashboardContext';
 import { 
   FileText, Clock, ArrowRight, Hourglass, Stethoscope, 
-  CheckCircle2, XCircle, AlertCircle, RotateCcw
+  CheckCircle2, XCircle, AlertCircle, RotateCcw, Users
 } from 'lucide-react';
 import { 
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, 

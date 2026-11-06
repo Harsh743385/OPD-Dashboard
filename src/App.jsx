@@ -70,10 +70,49 @@ const MainDashboard = () => {
   );
 };
 
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error("Dashboard caught error:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
+          <div className="max-w-md p-6 bg-slate-50 border border-slate-200 rounded-2xl shadow-sm">
+            <h2 className="text-lg font-bold text-slate-900 mb-2">Something went wrong</h2>
+            <p className="text-xs text-slate-600 mb-4 font-mono bg-white p-3 rounded-lg border border-slate-200 text-left overflow-auto">
+              {this.state.error?.message || "An unexpected error occurred while loading the dashboard."}
+            </p>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold rounded-lg shadow-xs transition-all"
+            >
+              Reload Dashboard
+            </button>
+          </div>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 export default function App() {
   return (
-    <DashboardProvider>
-      <MainDashboard />
-    </DashboardProvider>
+    <ErrorBoundary>
+      <DashboardProvider>
+        <MainDashboard />
+      </DashboardProvider>
+    </ErrorBoundary>
   );
 }
