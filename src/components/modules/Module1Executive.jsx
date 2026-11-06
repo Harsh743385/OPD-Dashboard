@@ -353,6 +353,255 @@ export const Module1Executive = () => {
         </div>
       </div>
 
+      {/* Row 4: Aggregate System Metrics & Monthly Analytics (Exact Reference from Image 3) */}
+      <div className="space-y-4 pt-2">
+        <div className="flex items-center justify-between">
+          <div>
+            <h3 className="text-sm font-bold text-slate-900">
+              System Administration & Cumulative OPD Records
+            </h3>
+            <p className="text-xs text-slate-500">Historical throughput, staffing and cloud digitized records</p>
+          </div>
+          <span className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-teal-50 text-teal-700 border border-teal-200">
+            JIKA Hospital Core HIS
+          </span>
+        </div>
+
+        {/* Top Mini Card: Total Admins */}
+        <div className="bg-white rounded-2xl p-4 border border-slate-200 border-l-4 border-l-emerald-500 shadow-xs flex items-center justify-between">
+          <div>
+            <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">TOTAL ADMINS</p>
+            <p className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 mt-0.5" style={{ color: '#0f172a' }}>8</p>
+            <p className="text-xs text-emerald-600 font-medium mt-0.5 flex items-center gap-1">
+              <span>👥</span> Hospital admins
+            </p>
+          </div>
+          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100">
+            <Users className="w-5 h-5" />
+          </div>
+        </div>
+
+        {/* 4 Cards Row 1: Today's Pending, Today's Complete, Total Pending, Total Complete */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          {/* Today's Pending */}
+          <div className="bg-white rounded-2xl p-4 border border-slate-200 border-l-4 border-l-amber-500 shadow-xs flex items-center justify-between">
+            <div>
+              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">TODAY'S PENDING</p>
+              <p className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 mt-1" style={{ color: '#0f172a' }}>34</p>
+              <button 
+                onClick={() => notify("Drilling into 34 pending consultations today.")}
+                className="text-xs text-amber-600 font-semibold mt-1 hover:underline flex items-center gap-1"
+              >
+                View →
+              </button>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
+              <Clock className="w-5 h-5" />
+            </div>
+          </div>
+
+          {/* Today's Complete */}
+          <div className="bg-white rounded-2xl p-4 border border-slate-200 border-l-4 border-l-rose-500 shadow-xs flex items-center justify-between">
+            <div>
+              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">TODAY'S COMPLETE</p>
+              <p className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 mt-1" style={{ color: '#0f172a' }}>6</p>
+              <button 
+                onClick={() => notify("Drilling into 6 completed consultations today.")}
+                className="text-xs text-rose-600 font-semibold mt-1 hover:underline flex items-center gap-1"
+              >
+                View →
+              </button>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center border border-rose-100">
+              <CheckCircle2 className="w-5 h-5" />
+            </div>
+          </div>
+
+          {/* Total Pending Appointments */}
+          <div className="bg-white rounded-2xl p-4 border border-slate-200 border-l-4 border-l-sky-500 shadow-xs flex items-center justify-between">
+            <div>
+              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">TOTAL PENDING APPOINTMENTS</p>
+              <p className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 mt-1" style={{ color: '#0f172a' }}>19,983</p>
+              <p className="text-xs text-sky-600 font-medium mt-1">Pending till date</p>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center border border-sky-100">
+              <Clock className="w-5 h-5" />
+            </div>
+          </div>
+
+          {/* Total Complete Appointments */}
+          <div className="bg-white rounded-2xl p-4 border border-slate-200 border-l-4 border-l-blue-600 shadow-xs flex items-center justify-between">
+            <div>
+              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">TOTAL COMPLETE APPOINTMENTS</p>
+              <p className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 mt-1" style={{ color: '#0f172a' }}>17,064</p>
+              <p className="text-xs text-blue-600 font-medium mt-1">Complete till date</p>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
+              <CheckCircle2 className="w-5 h-5" />
+            </div>
+          </div>
+        </div>
+
+        {/* 4 Cards Row 2: Hospital Staff, Visited Patients, OPD Pages, AWS Storage */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          {/* Total Hospital Staff */}
+          <div className="bg-white rounded-2xl p-4 border border-slate-200 border-l-4 border-l-purple-500 shadow-xs flex items-center justify-between">
+            <div>
+              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">TOTAL HOSPITAL STAFF</p>
+              <p className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 mt-1" style={{ color: '#0f172a' }}>389</p>
+              <p className="text-xs text-purple-600 font-medium mt-1">All staff combined</p>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center border border-purple-100">
+              <Users className="w-5 h-5" />
+            </div>
+          </div>
+
+          {/* Total Visited Patients */}
+          <div className="bg-white rounded-2xl p-4 border border-slate-200 border-l-4 border-l-teal-500 shadow-xs flex items-center justify-between">
+            <div>
+              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">TOTAL VISITED PATIENTS</p>
+              <p className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 mt-1" style={{ color: '#0f172a' }}>36,934</p>
+              <button 
+                onClick={() => notify("Accessing patient visit master registry.")}
+                className="text-xs text-teal-600 font-semibold mt-1 hover:underline flex items-center gap-1"
+              >
+                View →
+              </button>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center border border-teal-100">
+              <Stethoscope className="w-5 h-5" />
+            </div>
+          </div>
+
+          {/* Total OPD Pages */}
+          <div className="bg-white rounded-2xl p-4 border border-slate-200 border-l-4 border-l-amber-500 shadow-xs flex items-center justify-between">
+            <div>
+              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">TOTAL OPD PAGES</p>
+              <p className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 mt-1" style={{ color: '#0f172a' }}>13,764</p>
+              <p className="text-xs text-amber-600 font-medium mt-1">Digitized OPD pages</p>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
+              <FileText className="w-5 h-5" />
+            </div>
+          </div>
+
+          {/* Total AWS Storage */}
+          <div className="bg-white rounded-2xl p-4 border border-slate-200 border-l-4 border-l-red-500 shadow-xs flex items-center justify-between">
+            <div>
+              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">TOTAL AWS STORAGE</p>
+              <p className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 mt-1" style={{ color: '#0f172a' }}>0 MB</p>
+              <p className="text-xs text-rose-600 font-medium mt-1">Cumulative size</p>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center border border-rose-100">
+              <AlertCircle className="w-5 h-5" />
+            </div>
+          </div>
+        </div>
+
+        {/* Side-by-side Monthly Bar Charts (Image 3 exact reference) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
+          {/* Chart 1: Patient Appointments - Monthly */}
+          <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <span className="text-sky-500 font-bold">📊</span>
+                <h4 className="text-sm font-bold text-slate-900">Patient Appointments — Monthly</h4>
+              </div>
+              <span className="px-2.5 py-1 text-xs font-mono font-bold bg-slate-50 border border-slate-200 rounded-lg text-slate-700">
+                2026
+              </span>
+            </div>
+
+            <div className="h-64 w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={[
+                    { month: 'Jan', Patients: 1200 },
+                    { month: 'Feb', Patients: 1350 },
+                    { month: 'Mar', Patients: 1420 },
+                    { month: 'Apr', Patients: 1600 },
+                    { month: 'May', Patients: 1750 },
+                    { month: 'Jun', Patients: 1900 },
+                    { month: 'Jul', Patients: 1850 },
+                    { month: 'Aug', Patients: 1700 },
+                    { month: 'Sep', Patients: 2050 },
+                    { month: 'Oct', Patients: 2380 },
+                    { month: 'Nov', Patients: 1438 },
+                    { month: 'Dec', Patients: 0 }
+                  ]}
+                  margin={{ top: 10, right: 10, left: -15, bottom: 0 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" opacity={0.6} />
+                  <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#64748b' }} stroke="#cbd5e1" />
+                  <YAxis tick={{ fontSize: 11, fill: '#64748b' }} stroke="#cbd5e1" />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: '#0f172a', 
+                      borderColor: '#334155', 
+                      borderRadius: '8px', 
+                      fontSize: '12px',
+                      color: '#fff' 
+                    }} 
+                  />
+                  <Legend iconType="circle" wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }} />
+                  <Bar dataKey="Patients" fill="#38bdf8" radius={[4, 4, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+
+          {/* Chart 2: OPD Pages - Monthly */}
+          <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <span className="text-amber-500 font-bold">📄</span>
+                <h4 className="text-sm font-bold text-slate-900">OPD Pages — Monthly</h4>
+              </div>
+              <span className="px-2.5 py-1 text-xs font-mono font-bold bg-slate-50 border border-slate-200 rounded-lg text-slate-700">
+                2026
+              </span>
+            </div>
+
+            <div className="h-64 w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={[
+                    { month: 'Jan', Pages: 310 },
+                    { month: 'Feb', Pages: 380 },
+                    { month: 'Mar', Pages: 420 },
+                    { month: 'Apr', Pages: 490 },
+                    { month: 'May', Pages: 540 },
+                    { month: 'Jun', Pages: 680 },
+                    { month: 'Jul', Pages: 620 },
+                    { month: 'Aug', Pages: 450 },
+                    { month: 'Sep', Pages: 390 },
+                    { month: 'Oct', Pages: 530 },
+                    { month: 'Nov', Pages: 280 },
+                    { month: 'Dec', Pages: 0 }
+                  ]}
+                  margin={{ top: 10, right: 10, left: -15, bottom: 0 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" opacity={0.6} />
+                  <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#64748b' }} stroke="#cbd5e1" />
+                  <YAxis tick={{ fontSize: 11, fill: '#64748b' }} stroke="#cbd5e1" />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: '#0f172a', 
+                      borderColor: '#334155', 
+                      borderRadius: '8px', 
+                      fontSize: '12px',
+                      color: '#fff' 
+                    }} 
+                  />
+                  <Legend iconType="circle" wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }} />
+                  <Bar dataKey="Pages" fill="#fb923c" name="OPD Pages" radius={[4, 4, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };
